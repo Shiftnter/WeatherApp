@@ -22,7 +22,7 @@ To run WeatherApp locally on your machine, follow these steps:
 
 1. Clone this repository: `git clone https://github.com/Shiftnter/WeatherApp.git`
 2. Navigate to the project directory.
-3. Open `index.html` in your preferred web browser.
+3. Open `index1.html` in your preferred web browser.
 
 That's it! You're now ready to explore WeatherApp and stay updated with the latest weather forecasts.
 
