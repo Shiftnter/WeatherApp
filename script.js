@@ -32,7 +32,7 @@ let weather = {
         "Wind speed: " + speed + " km/h";
       document.querySelector(".weather").classList.remove("loading");
       document.body.style.backgroundImage =
-        "url('https://source.unsplash.com/1600x900/?" + monument + "')";
+        "url('https://source.unsplash.com/1600x900/?" + sky + "')";
     },
     search: function () {
       this.fetchWeather(document.querySelector(".search-bar").value);
