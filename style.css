@@ -1,86 +1,162 @@
+/* Background Container with Animated Circles */
+#container {
+  background: #00adef;
+  background: -moz-linear-gradient(-45deg, #00adef 0%, #0076e5 100%);
+  background: -webkit-linear-gradient(-45deg, #00adef 0%,#0076e5 100%);
+  background: linear-gradient(135deg, #00adef 0%,#0076e5 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#container-inside {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#circle-small,
+#circle-medium,
+#circle-large,
+#circle-xlarge,
+#circle-xxlarge {
+  animation: circle-small-scale 3s ease-in-out infinite alternate;
+  animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+#circle-small {
+  top: 200px; left: -150px;
+  width: 300px; height: 300px;
+  opacity: 0.4;
+  animation-delay: 0s;
+}
+
+#circle-medium {
+  top: 50px; left: -300px;
+  width: 600px; height: 600px;
+  opacity: 0.3;
+  animation-delay: 0.3s;
+}
+
+#circle-large {
+  top: -100px; left: -450px;
+  width: 900px; height: 900px;
+  opacity: 0.2;
+  animation-delay: 0.6s;
+}
+
+#circle-xlarge {
+  top: -250px; left: -600px;
+  width: 1200px; height: 1200px;
+  opacity: 0.1;
+  animation-delay: 0.9s;
+}
+
+#circle-xxlarge {
+  top: -400px; left: -750px;
+  width: 1500px; height: 1500px;
+  opacity: 0.05;
+  animation-delay: 1.2s;
+}
+
+@keyframes circle-small-scale {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.1); }
+}
+
+/* Weather Card Styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    font-size: 120%;
-  }
-  
-  .card {
-    background: #000000d0;
-    color: white;
-    padding: 2em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 420px;
-    margin: 1em;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  button {
-    margin: 0.5em;
-    border-radius: 50%;
-    border: none;
-    height: 44px;
-    width: 44px;
-    outline: none;
-    background: #7c7c7c2b;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
-  
-  input.search-bar {
-    border: none;
-    outline: none;
-    padding: 0.4em 1em;
-    border-radius: 24px;
-    background: #7c7c7c2b;
-    color: white;
-    font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 100px);
-  }
-  
-  button:hover {
-    background: #7c7c7c6b;
-  }
-  
-  h1.temp {
-    margin: 0;
-    margin-bottom: 0.4em;
-  }
-  
-  .flex {
-    display: flex;
-    align-items: center;
-  }
-  
-  .description {
-    text-transform: capitalize;
-    margin-left: 8px;
-  }
-  
-  .weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-  }
-  
-  .weather.loading:after {
-    visibility: visible;
-    content: "Loading...";
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #222;
+  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  font-size: 120%;
+}
+
+.card {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+
+button:hover {
+  background: #7c7c7c6b;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
